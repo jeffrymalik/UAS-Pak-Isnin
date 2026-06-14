@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3307
--- Waktu pembuatan: 14 Jun 2026 pada 09.44
--- Versi server: 10.4.32-MariaDB
--- Versi PHP: 8.2.12
+-- Host: 127.0.0.1
+-- Generation Time: Jun 14, 2026 at 01:18 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.4.20
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `nasabah`
+-- Table structure for table `nasabah`
 --
 
 CREATE TABLE `nasabah` (
@@ -33,22 +33,55 @@ CREATE TABLE `nasabah` (
   `nmnasabah` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data untuk tabel `nasabah`
+-- Table structure for table `simpanan`
 --
 
-INSERT INTO `nasabah` (`idnasabah`, `norek`, `nmnasabah`) VALUES
-('NS8901', '088577809080', 'Dimsi');
+CREATE TABLE `simpanan` (
+  `idsimpanan` int(11) NOT NULL,
+  `idnasabah` varchar(20) NOT NULL,
+  `tglsimpan` date NOT NULL,
+  `jmlsimpanan` decimal(15,2) NOT NULL DEFAULT 0.00
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `nasabah`
+-- Indexes for table `nasabah`
 --
 ALTER TABLE `nasabah`
   ADD PRIMARY KEY (`idnasabah`);
+
+--
+-- Indexes for table `simpanan`
+--
+ALTER TABLE `simpanan`
+  ADD PRIMARY KEY (`idsimpanan`),
+  ADD KEY `idnasabah` (`idnasabah`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `simpanan`
+--
+ALTER TABLE `simpanan`
+  MODIFY `idsimpanan` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `simpanan`
+--
+ALTER TABLE `simpanan`
+  ADD CONSTRAINT `simpanan_ibfk_1` FOREIGN KEY (`idnasabah`) REFERENCES `nasabah` (`idnasabah`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -18,7 +18,7 @@
 </head>
 <body>
     <div class="header">
-        <img class="logo" src="logobni.png" alt="">
+        <img class="logo" src="img/logobni.png" alt="">
         <div class="header-title">
             <h1>Menu Administrasi</h1>
             <p>Pendaftaran Nasabah Baru BBNI</p>
@@ -33,8 +33,10 @@
                     <button class="menu-btn" onclick="window.location.href='index.html'">Home</button>
                     <button class="menu-btn" onclick="window.location.href='index.html'">Berita</button>
                     <button class="menu-btn" onclick="window.location.href='index.html'">Produk kami</button>
-                    <button class="menu-btn" onclick="window.location.href='tambahnasabah.html'" >Tambah Nasabah</button>
-                    <button class="menu-btn" onclick="window.location.href='datanasabah.html'" >Data Nasabah</button>
+                    <button class="menu-btn" onclick="window.location.href='datanasabah.php'" >Data Nasabah</button>
+                    <button class="menu-btn" onclick="window.location.href='datasimpanan.php'" >Data Simpanan</button>
+                    <button class="menu-btn" onclick="window.location.href='tambahnasabah.php'" >Tambah Nasabah</button>
+                    <button class="menu-btn" onclick="window.location.href='tambahsimpanan.php'" >Tambah Nasabah</button>
                     <button class="menu-btn" onclick="window.location.href='ebanking.html'">E-Banking</button>
                 </div>
             </div>
