@@ -42,9 +42,9 @@ while ($row = mysqli_fetch_assoc($result_nasabah)) {
             <div class="menu-section">
                 <h2>MENU</h2>
                 <div class="menu-buttons">
-                    <button class="menu-btn" onclick="showDefault()">Home</button>
-                    <button class="menu-btn" onclick="showBerita()">Berita</button>
-                    <button class="menu-btn" onclick="showProduk()">Produk kami</button>
+                    <button class="menu-btn" onclick="window.location.href='index.html'">Home</button>
+                    <button class="menu-btn" onclick="window.location.href='index.html'">Berita</button>
+                    <button class="menu-btn" onclick="window.location.href='index.html'">Produk kami</button>
                     <button class="menu-btn" onclick="window.location.href='datanasabah.php'" >Data Nasabah</button>
                     <button class="menu-btn" onclick="window.location.href='datasimpanan.php'" >Data Simpanan</button>
                     <button class="menu-btn" onclick="window.location.href='tambahnasabah.php'" >Tambah Nasabah</button>
